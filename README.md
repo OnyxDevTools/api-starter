@@ -138,3 +138,12 @@ request authorization before exposing private data.
 If `/readyz` returns 503, check credentials, connectivity, table setup, and database
 permissions. A missing table is a dependency failure. If startup reports missing
 configuration, export the Onyx settings before starting the API.
+
+## SDK baseline
+
+The official Go SDK `v0.6.1` is pinned and was verified as the latest published release on 2026-10-26.
+Use the downloaded Onyx configuration and explicit schema setup described above.
+Task is the single-table full-CRUD example. Keep request contexts, bounded calls,
+insert-only creates, affected-count updates/deletes, and cursor pagination.
+Never publish schemas at startup or expose database credentials to browsers.
+SDK setup does not provide application authentication or authorization.
