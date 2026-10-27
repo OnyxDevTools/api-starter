@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "api-starter",
+  "name": "API Starter",
+  "description": "Small Go REST API with single-table Onyx CRUD, locally rendered documentation, and a stateless container.",
+  "tags": [
+    "go",
+    "api",
+    "onyx",
+    "containers"
+  ],
+  "useWhen": [
+    "A product needs a simple Go API with Onyx persistence"
+  ],
+  "avoidWhen": [
+    "A UI-only app or a different database/framework is required"
+  ],
+  "capabilities": [
+    "Single-table full CRUD",
+    "Typed OpenAPI contracts",
+    "Self-hosted interactive Swagger UI documentation",
+    "Onyx cursor pagination",
+    "Non-root stateless container"
+  ],
+  "notIncluded": [
+    "Frontend",
+    "Authentication",
+    "Authorization",
+    "Hosting adapter",
+    "Hosted documentation"
+  ],
+  "runtime": {
+    "install": "make install",
+    "develop": "make api",
+    "build": "make build",
+    "healthPath": "/healthz",
+    "readinessPath": "/readyz",
+    "requiredEnvironment": [
+      "Onyx SDK credentials or downloaded configuration"
+    ]
+  },
+  "instructions": "README.md"
+}

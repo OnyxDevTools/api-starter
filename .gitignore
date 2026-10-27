@@ -1,0 +1,26 @@
+# .gitignore
+.tools/
+bin/
+coverage/
+*.log
+.env*
+!.env.example
+**/onyx-database*.json
+config/
+.onyx/
+*.pem
+*.key
+.DS_Store
+.idea/
+.vscode/
+
+# Local build, test, and profiling output
+/build/
+/dist/
+/reports/
+/test-results/
+.cache/
+*.test
+*.out
+*.prof
+*.pprof

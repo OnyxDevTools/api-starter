@@ -1,0 +1,18 @@
+# .github/workflows/ci.yml
+name: checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - uses: actions/setup-go@v6.0.0
+        with:
+          go-version-file: go.mod
+          cache: true
+      - run: make check lint vuln schema-validate
+      - run: make openapi
+      - run: git diff --exit-code -- api/openapi.json api/openapi.yaml
+      - run: docker build -t api-starter .

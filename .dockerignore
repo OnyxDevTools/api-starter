@@ -1,0 +1,25 @@
+# .dockerignore
+.git
+.github
+.tools
+bin
+coverage
+config
+**/.env*
+**/onyx-database*.json
+**/.onyx
+**/*.pem
+**/*.key
+**/*.log
+.DS_Store
+.idea
+.vscode
+build
+dist
+reports
+test-results
+.cache
+**/*.test
+**/*.out
+**/*.prof
+**/*.pprof
